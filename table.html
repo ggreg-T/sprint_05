@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
       <div class="container">
         <div class="navbar-brand mx-md-5">
-          <a href="#" class="text-decoration-none text-white">EU-table</a>
+          <a href="#" class="text-decoration-none text-white">EU</a>
         </div>
       </div>
       <button
@@ -29,12 +29,31 @@
       </button>
       <div class="collapse navbar-collapse" id="navcol"></div>
     </nav>
+    <!-- <nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand mx-md-5">
+          <a href="#" class="text-decoration-none text-white">EU-table</a>
+        </div>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navcol"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navcol"></div>
+    </nav> -->
     <!-- H1 -->
     <br />
     <p class="h1">HTML table presentation</p>
     <br />
     <!-- TABLEAU -->
-    <table class="table table-bordered">
+    <table
+      class="table table-bordered table-hover text-nowrap"
+      style="width: 1000px"
+    >
       <thead class="table-light">
         <tr>
           <th scope="col">Country</th>
@@ -43,7 +62,7 @@
           <th scope="col">Capital</th>
         </tr>
       </thead>
-      <tbody id="tabb"></tbody>
+      <tbody id="tabb" class="border-top-0"></tbody>
     </table>
     <!-- script -->
     <script src="table.js"></script>
