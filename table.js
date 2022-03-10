@@ -10,6 +10,8 @@
 // }
 // render();
 
+// let bbout = document.getElementsByClassName("bout")
+//   .innerHTML`<button class="raf">Relancer</button>`;
 async function render() {
   // let recup;
   // let demande;
