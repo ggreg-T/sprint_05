@@ -9,17 +9,13 @@
 //   }
 // }
 // render();
-
-// let bbout = document.getElementsByClassName("bout")
-//   .innerHTML`<button class="raf">Relancer</button>`;
 async function render() {
-  // let recup;
-  // let demande;
-  demande = await fetch("https://restcountries.com/v3.1/region/europe");
+  let demande = await fetch("https://restcountries.com/v3.1/region/europe");
   try {
     if (demande.ok) {
-      recup = await demande.json();
+      let recup = await demande.json();
       console.log("tout est bon");
+      // let bout = '<button  class="raf">refresh</button>';
       let affich = "";
       for (let i in recup) {
         affich += `<tr><td class="fw-bold">${recup[i].name.official}</td> <td class="text-end">${recup[i].area}</td><td class="text-end">${recup[i].population}</td><td>${recup[i].capital}</td></tr>`;
@@ -30,6 +26,17 @@ async function render() {
   } catch (e) {
     console.error(e);
     console.log("dans le catch");
+
+    let buton = document.createElement("button");
+    let raffr = document.createTextNode("Raffraichir");
+    buton.appendChild(raffr);
+    document.getElementById("bout").textContent = "";
+    document.getElementById("bout").appendChild(buton);
+    buton.addEventListener("click", function () {
+      render();
+    });
+    // let bout = '<button  class="raf">refresh</button>';
+    console.log("erreur");
   }
 }
 render();
