@@ -21,22 +21,32 @@ async function render() {
         affich += `<tr><td class="fw-bold">${recup[i].name.official}</td> <td class="text-end">${recup[i].area}</td><td class="text-end">${recup[i].population}</td><td>${recup[i].capital}</td></tr>`;
         // console.log(i);
         document.getElementById("tabb").innerHTML = affich;
+        // bouton
+        let buton = document.createElement("button");
+        let raffr = document.createTextNode("Raffraichir");
+        buton.appendChild(raffr);
+        document.getElementById("bout").textContent = "";
+        document.getElementById("bout").appendChild(buton);
+        buton.addEventListener("click", function () {
+          render();
+        });
+        // let bout = '<button  class="raf">refresh</button>';
       }
     }
   } catch (e) {
     console.error(e);
     console.log("dans le catch");
 
-    let buton = document.createElement("button");
-    let raffr = document.createTextNode("Raffraichir");
-    buton.appendChild(raffr);
-    document.getElementById("bout").textContent = "";
-    document.getElementById("bout").appendChild(buton);
-    buton.addEventListener("click", function () {
-      render();
-    });
+    // let buton = document.createElement("button");
+    // let raffr = document.createTextNode("Raffraichir");
+    // buton.appendChild(raffr);
+    // document.getElementById("bout").textContent = "";
+    // document.getElementById("bout").appendChild(buton);
+    // buton.addEventListener("click", function () {
+    //   render();
+    // });
     // let bout = '<button  class="raf">refresh</button>';
-    console.log("erreur");
+    // console.log("erreur");
   }
 }
 render();
